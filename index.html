@@ -13,7 +13,7 @@
             --border-color: #d0d7de;
             --primary-color: #0969da;
             --star-color: #e3b341;
-            --shadow: 0 3px 6px rgba(140, 149, 159, 0.15);
+            --shadow: 0 3px 6px rgba(140, 149, 159, 0.12);
         }
 
         * {
@@ -37,87 +37,81 @@
 
         header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 600;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
 
         header p {
             color: var(--text-sub);
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
-        /* 搜索框 */
+        /* 搜索框与统计 */
         .controls {
-            margin-bottom: 2rem;
-        }
-
-        .search-box {
-            position: relative;
+            margin-bottom: 1.5rem;
         }
 
         .search-box input {
             width: 100%;
-            padding: 1rem 1.25rem;
-            font-size: 1.1rem;
+            padding: 0.85rem 1.25rem;
+            font-size: 1rem;
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 10px;
             outline: none;
             transition: border-color 0.2s, box-shadow 0.2s;
             background: var(--card-bg);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .search-box input:focus {
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 4px rgba(9, 105, 218, 0.12);
+            box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.12);
         }
 
         .stats-bar {
             margin-bottom: 1.25rem;
             color: var(--text-sub);
             font-size: 0.95rem;
-            padding: 0 0.5rem;
+            padding: 0 0.25rem;
         }
 
         /* 列表卡片网格 */
         .repo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.25rem;
         }
 
         .repo-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem;
+            border-radius: 10px;
+            padding: 1.25rem;
             display: flex;
             flex-direction: column;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            height: 100%; /* 高度充满网格 */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .repo-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             box-shadow: var(--shadow);
-            border-color: #bbdefb;
+            border-color: #0969da44;
         }
 
         .repo-main {
-            flex-grow: 1; /* 占据剩余空间，将 footer 推到底部 */
-            margin-bottom: 1.25rem;
+            flex-grow: 1; /* 让内容撑开顶部空间，底栏自然靠底 */
+            margin-bottom: 1rem;
         }
 
         .repo-title {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            margin-bottom: 0.75rem;
-            word-break: break-all; /* 防止长名称撑破卡片 */
+            margin-bottom: 0.6rem;
+            word-break: break-all;
         }
 
         .repo-title a {
@@ -129,31 +123,25 @@
             text-decoration: underline;
         }
 
-        /* ✨ 核心修改：描述信息完整显示 */
+        /* ✨ 完整显示描述文本，自动换行不截断 */
         .repo-desc {
-            font-size: 0.95rem;
-            color: var(--text-main); /* 提高描述文本的辨识度 */
-            white-space: pre-wrap;    /* 保留换行，自动换行 */
-            overflow: visible;        /* 确保内容可见 */
-            display: block;           /* 标准块级显示 */
-            /* 移除之前的所有行数限制 (-webkit-line-clamp 等) */
+            font-size: 0.92rem;
+            color: var(--text-main);
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.6;
         }
 
+        /* ✨ 卡片底部元信息栏 */
         .repo-meta {
             display: flex;
             align-items: center;
-            justify-content: space-between; /* 左右分布 */
-            font-size: 0.9rem;
+            justify-content: space-between;
+            font-size: 0.88rem;
             color: var(--text-sub);
-            border-top: 1px solid #eee;
-            padding-top: 1rem;
-            margin-top: auto; /* 确保 footer 始终在卡片底部 */
-        }
-
-        .meta-left, .meta-right {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 0.85rem;
+            margin-top: auto;
         }
 
         .meta-item {
@@ -164,24 +152,24 @@
 
         .star-icon {
             color: var(--star-color);
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .lang-color {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
-            background-color: #ccc; /* 默认颜色 */
+            display: inline-block;
         }
 
         .loading, .no-result {
             text-align: center;
             padding: 4rem 2rem;
             color: var(--text-sub);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             grid-column: 1 / -1;
             background: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 10px;
             border: 1px solid var(--border-color);
         }
     </style>
@@ -196,7 +184,7 @@
 
     <div class="controls">
         <div class="search-box">
-            <input type="text" id="searchInput" placeholder="搜索仓库名称、描述或语言 (如: Java, AI, tool)..." oninput="filterRepos()">
+            <input type="text" id="searchInput" placeholder="搜索仓库名称、描述或语言 (如: Java, AI, Rust)..." oninput="filterRepos()">
         </div>
     </div>
 
@@ -205,14 +193,14 @@
     </div>
 
     <div class="repo-grid" id="repoGrid">
-        <div class="loading">正在加载仓库数据，请稍候...</div>
+        <div class="loading">正在加载仓库数据...</div>
     </div>
 </div>
 
 <script>
     let allRepos = [];
 
-    // 简单语言颜色映射
+    // 部分语言标记颜色
     const langColors = {
         'Java': '#b07219',
         'Python': '#3572A5',
@@ -223,35 +211,35 @@
         'C++': '#f34b7d',
         'Kotlin': '#A97BFF',
         'Shell': '#89e051',
-        'Vue': '#41b883',
-        'React': '#61dafb'
+        'Vue': '#41b883'
     };
 
     async function loadRepos() {
         const grid = document.getElementById('repoGrid');
         try {
             const response = await fetch('./api.json');
-            if (!response.ok) throw new Error('网络响应异常，无法获取 api.json');
+            if (!response.ok) throw new Error('无法读取 api.json');
             
-            allRepos = await response.json();
+            const rawData = await response.json();
             
-            // 数据容错与清洗：确保 stars 和描述存在
-            allRepos = allRepos.map(repo => ({
-                ...repo,
-                name: repo.name || 'Unknown',
-                // ✨ 修复 Stars 显示：根据 api.json 实际结构调整
-                stars: repo.stargazers_count ?? repo.stars ?? 0, 
-                description: repo.description || 'No description provided.',
-                language: repo.language || 'Mixed'
+            // 数据解析与字段匹配
+            allRepos = rawData.map(repo => ({
+                name: repo.name || 'Untitled',
+                // ✨ 跳转链接字段匹配：优先使用 htmlUrl，其次是 url / html_url
+                url: repo.htmlUrl || repo.html_url || repo.url || '#',
+                // ✨ 关键修复：读取 api.json 中的 stargazersCount 字段
+                stars: repo.stargazersCount ?? repo.stargazers_count ?? repo.stars ?? 0,
+                description: repo.description || '暂无描述信息',
+                language: repo.language || 'Other'
             }));
 
-            // 按降序排列（可选）
+            // 默认按 Star 数量降序排序
             allRepos.sort((a, b) => b.stars - a.stars);
 
             renderRepos(allRepos);
         } catch (error) {
-            console.error('Data load failed:', error);
-            grid.innerHTML = `<div class="no-result">⚠️ 无法加载仓库数据。请确保根目录下存在 <strong>api.json</strong> 文件。</div>`;
+            console.error('加载 api.json 失败:', error);
+            grid.innerHTML = `<div class="no-result">⚠️ 加载失败，请确保根目录包含正确的 <strong>api.json</strong> 文件。</div>`;
         }
     }
 
@@ -262,33 +250,28 @@
         countEl.textContent = repos.length;
 
         if (repos.length === 0) {
-            grid.innerHTML = `<div class="no-result">🔍 未找到匹配的仓库项目</div>`;
+            grid.innerHTML = `<div class="no-result">🔍 未找到匹配的开源项目</div>`;
             return;
         }
 
         grid.innerHTML = repos.map(repo => {
-            const langColor = langColors[repo.language] || '#ccc';
+            const color = langColors[repo.language] || '#ccc';
 
             return `
                 <div class="repo-card">
                     <div class="repo-main">
                         <div class="repo-title">
-                            <a href="${repo.url || repo.html_url}" target="_blank" rel="noopener noreferrer">${repo.name}</a>
+                            <a href="${repo.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(repo.name)}</a>
                         </div>
-                        <!-- ✨ 描述信息现在会完整显示，自动换行 -->
                         <div class="repo-desc">${escapeHtml(repo.description)}</div>
                     </div>
                     <div class="repo-meta">
-                        <div class="meta-left">
-                            <span class="meta-item">
-                                <span class="lang-color" style="background-color: ${langColor}"></span>
-                                ${repo.language}
-                            </span>
+                        <div class="meta-item">
+                            <span class="lang-color" style="background-color: ${color}"></span>
+                            ${escapeHtml(repo.language)}
                         </div>
-                        <div class="meta-right">
-                            <span class="meta-item">
-                                <span class="star-icon">★</span> ${repo.stars.toLocaleString()}
-                            </span>
+                        <div class="meta-item">
+                            <span class="star-icon">★</span> ${repo.stars.toLocaleString()}
                         </div>
                     </div>
                 </div>
@@ -296,18 +279,11 @@
         }).join('');
     }
 
-    // 简单转义防止 HTML 注入
     function escapeHtml(text) {
-        if (!text) return text;
-        return text.replace(/[<>&"']/g, function(m) {
-            return {
-                '<': '&lt;',
-                '>': '&gt;',
-                '&': '&amp;',
-                '"': '&quot;',
-                "'": '&#039;'
-            }[m];
-        });
+        if (!text) return '';
+        return text.replace(/[<>&"']/g, m => ({
+            '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;', "'": '&#039;'
+        }[m]));
     }
 
     function filterRepos() {

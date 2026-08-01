@@ -1,5 +1,7 @@
 # davidyang0168 Starred Repositories
 
+- [Museek](https://github.com/aeroray/Museek)	[A cross-platform desktop music aggregator. 桌面端多平台音乐聚合软件]
+- [LunaTV](https://github.com/MoonTechLab/LunaTV)	[本项目采用 CC BY-NC-SA 协议，禁止任何商业化行为，任何衍生项目必须保留本项目地址并以相同协议开源]
 - [april-github-star-list](https://github.com/april-projects/april-github-star-list)	[这是一个 可以从 Github 获取指定用户的 Star 仓库列表，并将其输出为 Markdown 格式的文件，使用 GitHub Action 自动运行，作为备份。]
 - [FluxDown](https://github.com/zerx-lab/FluxDown)	[Rust 驱动的多协议下载管理器，支持 HTTP/FTP/BitTorrent 磁力链接及 HLS/DASH 流媒体，智能多线程加速与浏览器无缝集成。精美界面，极致性能，永久免费，零广告。]
 - [karakeep](https://github.com/karakeep-app/karakeep)	[A self-hostable bookmark-everything app (links, notes and images) with AI-based automatic tagging and full text search]
@@ -17,7 +19,6 @@
 - [obsidian-skills](https://github.com/kepano/obsidian-skills)	[Agent skills for Obsidian. Teach your agent to use Obsidian CLI and open formats including Markdown, Bases, JSON Canvas.]
 - [Solara](https://github.com/akudamatata/Solara)	[一个极简风格的基于免费API的音乐播放器]
 - [Cloudflare-Navihive](https://github.com/shiteThings/Cloudflare-Navihive)	[NaviHive 是一个精美的个人网站导航管理系统，帮助你整理和管理你收藏的网站链接。支持分组管理、拖拽排序、暗色模式等功能，让你的网站收藏更有条理、更易访问。]
-- [Han1meViewer](https://github.com/misaka10032w/Han1meViewer)	[hanime1的三方客户端，提高了一些播放体验]
 - [pandoc](https://github.com/jgm/pandoc)	[Universal markup converter]
 - [SteamTools](https://github.com/BeyondDimension/SteamTools)	[🛠「Watt Toolkit」是一个开源跨平台的多功能 Steam 工具箱。]
 - [picgo-plugin-cfbed-uploader](https://github.com/Nahuimi/picgo-plugin-cfbed-uploader)	[PicGo uploader plugin for CloudFlare ImgBed developed by AI.]
@@ -99,4 +100,3 @@
 - [meta-rules-dat](https://github.com/MetaCubeX/meta-rules-dat)	[rules-dat for mihomo]
 - [extractNodes](https://github.com/shiteThings/extractNodes)	[No description available.]
 - [DownieExtensions](https://github.com/charlieMonroe/DownieExtensions)	[Browser Extensions used in Downie (https://software.charliemonroe.net/downie/).]
-- [aria2](https://github.com/aria2/aria2)	[aria2 is a lightweight multi-protocol & multi-source, cross platform download utility operated in command-line. It supports HTTP/HTTPS, FTP, SFTP, BitTorrent and Metalink.]
